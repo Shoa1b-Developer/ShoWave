@@ -1,7 +1,7 @@
 const userInput = document.querySelector('.Input')
 , display = document.querySelector('.command')
 , form = document.querySelector('form')
-, help = '.help for commands<br>.gg-search for google search<br>.yt-search for youtube search<br>.clg - Collage<br>.font - google fonts<br>'
+, help = '.help for commands<br>.gg-search for google search<br>.yt-search for youtube search<br>.clg - Collage<br>.font - google fonts<br>.clear - clear display<br>'
 
 form.addEventListener('submit', function show(e) {
   const user = userInput.value;
@@ -19,7 +19,11 @@ form.addEventListener('submit', function show(e) {
     } else if (user == '.font') {
       form.action = 'https://fonts.google.com/';
       userInput.value = '';
-    } else {
+    } else if (user == '.clear') {
+      e.preventDefault();
+      userInput.value = '';
+      display.innerHTML = '';
+  } else {
     e.preventDefault();
     userInput.value = '';
   }
