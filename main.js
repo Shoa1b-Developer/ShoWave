@@ -1,7 +1,7 @@
 const userInput = document.querySelector('.Input')
 , display = document.querySelector('.command')
 , form = document.querySelector('form')
-, help = '.help for commands<br>.gg-search for google search<br>.yt-search for youtube search<br>.clg - Collage<br>.font - google fonts<br>.clear - clear display<br>'
+, help = '.help for commands<br>.gg-search for google search<br>.yt-search for youtube search<br>.clg - Collage<br>.font - google fonts<br>.clear - clear display<br>.git -github<br>'
 
 form.addEventListener('submit', function show(e) {
   const user = userInput.value;
@@ -23,7 +23,10 @@ form.addEventListener('submit', function show(e) {
       e.preventDefault();
       userInput.value = '';
       display.innerHTML = '';
-  } else {
+  } else if (user == '.git') {
+      form.action = 'https://github.com/';
+      userInput.value = '';
+    } else {
     e.preventDefault();
     userInput.value = '';
   }
