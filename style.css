@@ -48,6 +48,9 @@ nav {
 .bar:nth-child(3) {
   background: white;
 }
+span {
+  color:#DE554D;
+}
 .name {
   font-size: 1.4rem;
   color: white;
